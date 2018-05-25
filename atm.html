@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl7nE5EFmr7n2H6SG6_2GevOoGutuUWR4&libraries=places"></script>
+    <script type="text/javascript" src="atm.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="mapcontainer">
+      <div id="map">
+      </div>
+    </div>
+      <div class="atmcontainer">
+        <table id="atmList">
+          <thead>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Distance
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <style>
+  .container{
+    display:flex;
+    height:100%;
+  }
+  .mapcontainer{
+    flex:0 0 66%;
+  }
+  .atmcontainer{
+    flex:0 0 33%;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 32px;
+  }
+  html, body, #map{
+    height:100%;
+    margin:0px;
+    padding:0px;
+  }
+  tr:nth-child(even) {background-color: #f2f2f2;}
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  tr:hover {background-color: #4286f4;}
+  </style>
+</html>
