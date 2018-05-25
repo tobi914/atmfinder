@@ -89,4 +89,29 @@ function calcDistance(pos1, pos2) {
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   return earthRadiusKm * c;
 }
+
+function sortTable(index)
+{
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("atmList");
+  switching = true;
+  while(switching){
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    for(i = 1; i < rows.length - 1; ++i){
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[index];
+      y = rows[i + 1].getElementsByTagName("TD")[index];
+      if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if(shouldSwitch){
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
 google.maps.event.addDomListener(window, "load", initialize);
